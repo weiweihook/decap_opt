@@ -2,11 +2,11 @@
 
 ## Prerequisites
 We model the 2.5D hierarchical PDN  by using 'bin' directory, there are three main files that we will use, as follows:
- - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration file (e.g.  config/case/chiplet1.conf), the usage is as follows:
+ - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration (e.g.  config/case/chiplet1.conf), the usage is as follows:
 ```shell 
 $ bin/diegen chiplet1.conf
 ```
- - **intgen**: generates the overall PDN and simulation file (.sp file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration file (e.g.  config/case/intp_chip1.conf), the usage is as follows:
+ - **intgen**: generates the overall PDN and simulation file (.sp file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration (e.g.  config/case/intp_chip1.conf), the usage is as follows:
 ```shell 
 $ bin/intgen intp_chip1.conf
 ```
