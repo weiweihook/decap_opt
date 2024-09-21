@@ -66,7 +66,7 @@ We place five examples under 'conifg' directory, which contains the configuratio
 ## Source Code
 
 ### Impedance Optimzation
-'src/impedance' directory contains the codes for impedance optimization.
+'src/impedance' directory contains the codes for impedance optimization. The state information contains: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution.
 
 ### Generate I/O Currents
 
@@ -74,6 +74,11 @@ We place five examples under 'conifg' directory, which contains the configuratio
 
 ###  VVI Optimzation
 
-'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions of the approach. 
+'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions:
  - **vvi_v1**: only considers the VVI information as the state
- - **vvi_v2**: uses a more comprehensive state representation, taking into account: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution
+ - **vvi_v2**: uses a more comprehensive state representation, taking the state used in impedance optimization into account. After performing impedance optimization, the pre-trained network from that phase can be reused for VVI optimization, which helps in reducing the training time. 
+
+## Other Details
+
+### PDN Modeling
+![PDN.png](.fig/PDN.png)
