@@ -64,13 +64,17 @@ We place five examples under 'conifg' directory, which contains the configuratio
 	- **Policy Network (actor)**:  one fully connected layer
 
 ## Source Code
+
 ###Impedance Optimzation
+
 'src/impedance' directory contains the codes for impedance optimization.
 
 ###Generate I/O Currents
+
  'src/gen_IOcurrents/gen_current.py' is used to generate varying levels of correlation, which represent different severities of simultaneous switching noise (SSN) in the 2.5D decap optimization.
 
 ###VVI Optimzation:
+
 'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions of the approach. 
 - **vvi_v1**: only considers the VVI information as the state
 - **vvi_v2**: uses a more comprehensive state representation, taking into account: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution
