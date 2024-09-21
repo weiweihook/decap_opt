@@ -54,6 +54,7 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 | Discount       | 0.99|
 
 </center>
+
 - **Deep Nerual Network (DNN) Structure**: 
 	- **First Layer**: convolution layer with 4 channels
 	- **Second Layer**: convolution layer with 16 channels
