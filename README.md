@@ -26,3 +26,7 @@
 | Discount(γ)         | 0.99|
 
 </center>
+
+```shell 
+pip install ngspice
+```
