@@ -46,15 +46,17 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 | Learning Rate       | 2.5E-4 |
 | Clip Gradient Norm  | 0.5 |
 | Total Epoch         | 600 |
-| Batch Size          | 480 |
+| Batch Size          | 50 |
 | Minibatch Size      | 4   |
 | Clipping Coefficient| 0.1 |
 | Entropy Coefficient | 0.01|
 | Value Coefficient   | 0.5 |
-| Discount(γ)         | 0.99|
+| Discount       | 0.99|
 
 </center>
-
-```shell 
-pip install ngspice
-```
+- **Deep Nerual Network (DNN) Structure**: 
+	- **First Layer**: convolution layer with 4 channels
+	- **Second Layer**: convolution layer with 16 channels
+	- **Third Layer**: fully connected layer
+	- **Value  Network (critic)**:  one fully connected layer
+	- **Policy Network (actor)**:  one fully connected layer
