@@ -29,7 +29,7 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 
 ## Configurations
 
- 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case. We place five examples under 'conifg' directory. Here we briefly describe the options.
+We place five examples under 'conifg' directory, which contains the configuration files (.conf), subckt files (.subckt), and simulation file (.sp). 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case.  Below is a brief description of the key options used in this configuration file:
 - **intp_mim**: specifies the number of available unit decap cells (UDCs) on the on-interposer PDN
 - **chip_mos**: specifies the number of available UDCs on the on-chip PDNs
 - **NCAP**: specifies the total number of available UDCs, including both the on-interposer and on-chip decaps
@@ -37,6 +37,7 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 - **chip_n**: specifies the locations of the available UDCs on the on-chip PDNs
 
 ## Experiment Settings 
+- **Hyparameter Setting**: 
 <center>
   
 | Hyperparameter | Value |
@@ -61,3 +62,15 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 	- **Third Layer**: fully connected layer
 	- **Value  Network (critic)**:  one fully connected layer
 	- **Policy Network (actor)**:  one fully connected layer
+
+## Source Code
+###Impedance Optimzation
+'src/impedance' directory contains the codes for impedance optimization.
+
+###Generate I/O Currents
+ 'src/gen_IOcurrents/gen_current.py' is used to generate varying levels of correlation, which represent different severities of simultaneous switching noise (SSN) in the 2.5D decap optimization.
+
+###VVI Optimzation:
+'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions of the approach. 
+- **vvi_v1**: only considers the VVI information as the state
+- **vvi_v2**: uses a more comprehensive state representation, taking into account: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution
