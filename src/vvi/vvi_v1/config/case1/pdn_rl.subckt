@@ -1,4 +1,0 @@
-.subckt pdn_rl pt1 pt2
-r1 pt1 mid 5m
-l1 mid pt2 1p
-.ends pdn_rl

@@ -1,8 +1,0 @@
-*.subckt uc_rl p1 p2 rvalue=34.2m lvalue=0.63p
-.subckt uc_rl p1 p2 rvalue=68.4m lvalue=1.26p
-rp1 p1 0 1e12
-r p1 m 'rvalue'
-l m p2 'lvalue'
-rp2 p2 0 1e12
-.ends sub_rl
-
