@@ -1,0 +1,22 @@
+*-- define pcb subckt model
+.subckt pcb_model in out
+*rs_pcb in middle 1.8m
+rs_pcb in middle 0.18m
+ls_pcb middle out 10p
+*ls_pcb middle out 40p
+
+*-- decap on board
+*rp_pcb middle middle1 1m	initial liuyu,next line is test
+rp_pcb middle middle1 15m	
+*lp_pcb middle1 middle2 6p	initial liuyu
+lp_pcb middle1 middle2 6p
+*cp_pcb middle2 0 7n		good choice,next line is test data
+cp_pcb middle2 0 0.02u
+
+*cp_pcb middle2 0 7.0u			initial
+*cp_pcb middle2 0 1.0u
+*cp_pcb middle2 0 0.5u
+
+*lp_pcb middle1 middle2 1p
+*cp_pcb middle2 0 0.1u
+.ends pcb_model
