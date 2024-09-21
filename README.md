@@ -23,7 +23,7 @@ $ pip install ngspice
 
 We mainly us two commands, as follow:
 ```shell 
-$ ngspice interposer_ac.sp # for impedance calculation\
+$ ngspice interposer_ac.sp # for impedance calculation
 $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation 
 ```
 
