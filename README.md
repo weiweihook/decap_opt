@@ -27,7 +27,14 @@ $ ngspice interposer_ac.sp # for impedance calculation
 $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation 
 ```
 
+## Configurations
 
+ 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case. We place five examples under 'conifg' directory. Here we briefly describe the options.
+- **intp_mim**: specifies the number of available unit decap cells (UDCs) on the on-interposer PDN
+- **chip_mos**: specifies the number of available UDCs on the on-chip PDNs
+- **NCAP**: specifies the total number of available UDCs, including both the on-interposer and on-chip decaps
+- **intp_n**: specifies the locations of the non-capacitor zones on the on-interposer PDN
+- **chip_n**: specifies the locations of the available UDCs on the on-chip PDNs
 
 ## Experiment Settings 
 <center>
