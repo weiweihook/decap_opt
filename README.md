@@ -65,15 +65,15 @@ We place five examples under 'conifg' directory, which contains the configuratio
 
 ## Source Code
 
-- ** Impedance Optimzation**
+ - ** Impedance Optimzation**
 
 'src/impedance' directory contains the codes for impedance optimization.
 
-- ** Generate I/O Currents**
+ - ** Generate I/O Currents**
 
  'src/gen_IOcurrents/gen_current.py' is used to generate varying levels of correlation, which represent different severities of simultaneous switching noise (SSN) in the 2.5D decap optimization.
 
--  ** VVI Optimzation**
+ -  ** VVI Optimzation**
 
 'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions of the approach. 
 	- **vvi_v1**: only considers the VVI information as the state
