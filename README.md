@@ -107,6 +107,6 @@ The 'src/impedance' directory contains the codes for impedance optimization. The
 
 | | | |
 | :-------------------------:|:-------------------------: |:-------------------------: |
-| ![](fig/vvi_dis/vvi_init.png) <br/>(a) Initial VVI | ![](fig/vvi_dis/vvi0.50.png) <br/>(b) $\gamma$=0.50 |  ![](fig/vvi_dis/vvi0.30.png) <br/>(c) $\gamma$=0.30 |
+| ![](fig/vvi_dis/vvi_init.png) <br/>(a) Initial | ![](fig/vvi_dis/vvi0.50.png) <br/>(b) $\gamma$=0.50 |  ![](fig/vvi_dis/vvi0.30.png) <br/>(c) $\gamma$=0.30 |
 | ![](fig/vvi_dis/vvi0.20.png) <br/>(d) $\gamma$=0.20 | ![](fig/vvi_dis/vvi0.10.png) <br/>(e) $\gamma$=0.10 |  ![](fig/vvi_dis/vvi0.05.png) <br/>(f) $\gamma$=0.05 |
 | ![](fig/vvi_dis/vvi0.02.png) <br/>(g) $\gamma$=0.02 | ![](fig/vvi_dis/vvi0.png) <br/>(h) $\gamma$=0 |  |
