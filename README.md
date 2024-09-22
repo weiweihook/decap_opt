@@ -85,8 +85,8 @@ We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: C
 	- **First Layer**: convolution layer with 4 channels
 	- **Second Layer**: convolution layer with 16 channels
 	- **Third Layer**: fully connected layer
-	- **Value  Network (critic)**:  one fully connected layer
-	- **Policy Network (actor)**:  one fully connected layer
+	- **Value (Critic) Network**:  one fully connected layer
+	- **Policy (Actor) Network**:  one fully connected layer
 
 ## Source Code
 
