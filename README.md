@@ -36,6 +36,13 @@ We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: C
 - **intp_n**: specifies the locations of the non-capacitor zones on the on-interposer PDN
 - **chip_n**: specifies the locations of the available UDCs on the on-chip PDNs
 
+## PDN Modeling
+
+<div style="display: flex; align-items: center; justify-content: space-around;">
+    <img src="fig/PDN.png" width="40%" />
+    <img src="fig/ETL.png" width="49%" />
+</div>
+
 ## Experiment Settings 
 
 - **Simulation Setting**: 
@@ -96,16 +103,7 @@ The 'src/impedance' directory contains the codes for impedance optimization. The
  - **vvi_v1**: only considers the VVI information as the state.
  - **vvi_v2**: uses a more comprehensive state representation, taking the state used in impedance optimization into account. After performing impedance optimization, the pre-trained network from that phase can be reused for VVI optimization, which helps in reducing the training time. 
 
-## Other Details
-
-### PDN Modeling
-
-<div style="display: flex; align-items: center; justify-content: space-around;">
-    <img src="fig/PDN.png" width="40%" />
-    <img src="fig/ETL.png" width="49%" />
-</div>
-
-### VVI Distribution after Time-Domain Optimization
+## VVI Distribution after Time-Domain Optimization
 
 	|	|	|	|
 	| ---	| ---	| ---	|
