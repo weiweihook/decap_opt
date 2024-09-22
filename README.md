@@ -2,11 +2,11 @@
 
 ## Prerequisites
 We model the 2.5D hierarchical PDN  by using 'bin' directory, there are three main files that we will use, as follows:
- - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration file (e.g.  'config/case/chiplet1.conf'), the usage is as follows:
+ - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration file (e.g.  'config/case1/chiplet1.conf'), the usage is as follows:
 ```shell 
 $ bin/diegen chiplet1.conf
 ```
- - **intgen**: generates the overall PDN and simulation file ('.sp' file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration file (e.g. 'config/case/intp_chip1.conf'), the usage is as follows:
+ - **intgen**: generates the overall PDN and simulation file ('.sp' file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration file (e.g. 'config/case1/intp_chip1.conf'), the usage is as follows:
 ```shell 
 $ bin/intgen intp_chip1.conf
 ```
@@ -29,7 +29,7 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 
 ## Configurations
 
-We provide five examples (ROCKET-64(case1), Case1(case2), Case2(case3), Case3(case4), Case5(case4)) under the 'conifg' directory, each containing configuration files ('.conf'), netlist files ('.subckt'), and simulation file ('.sp'). Notably, to accelerate simulations in both the frequency and time domains, all netlists are configured without VSS (ground) connections, simplifying the analysis and reducing simulation complexity. 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case.  Below is a brief description of the key options used in this configuration file:
+We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: Case3, case5: Case4) under the 'conifg' directory, each containing configuration files ('.conf'), netlist files ('.subckt'), and simulation file ('.sp'). Notably, to accelerate simulations in both the frequency and time domains, all netlists are configured without VSS (ground) connections, simplifying the analysis and reducing simulation complexity. 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case.  Below is a brief description of the key options used in this configuration file:
 - **intp_mim**: specifies the number of available unit decap cells (UDCs) on the on-interposer PDN
 - **chip_mos**: specifies the number of available UDCs on the on-chip PDNs
 - **NCAP**: specifies the total number of available UDCs, including both the on-interposer and on-chip decaps
