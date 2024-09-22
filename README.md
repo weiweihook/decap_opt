@@ -37,6 +37,24 @@ We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: C
 - **chip_n**: specifies the locations of the available UDCs on the on-chip PDNs
 
 ## Experiment Settings 
+
+- **Simulation Setting**: 
+<center>
+  
+| Parameter | Value |
+| :-------------------------:|:-------------------------: |
+| Vdd				| 0.9V|
+| $ripple$          		| 5% |
+| $f_{knee}$       		| 3.4GHz |
+| Impedance(flat)      	| 3.5m$\omega$ |
+| $\alpha$  			| 0.5 |
+| $\beta$         		| 0.5 |
+| $\gamma$          		| 0, 0.02, 0.05, 0.10, 0.20, 0.50 |
+| Frequency Range      	| 0.1- 20 GHz   |
+| Correlation of I/O Currents	| 0.9 |
+
+</center>
+
 - **Hyparameter Setting**: 
 <center>
   
@@ -75,7 +93,7 @@ The 'src/impedance' directory contains the codes for impedance optimization. The
 ###  VVI Optimzation
 
 'src/vvi' directory contains the implementation of the VVI optimization algorithms, with two different versions:
- - **vvi_v1**: only considers the VVI information as the state
+ - **vvi_v1**: only considers the VVI information as the state.
  - **vvi_v2**: uses a more comprehensive state representation, taking the state used in impedance optimization into account. After performing impedance optimization, the pre-trained network from that phase can be reused for VVI optimization, which helps in reducing the training time. 
 
 ## Other Details
