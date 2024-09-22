@@ -81,7 +81,9 @@ We place five examples under 'conifg' directory, which contains the configuratio
 ## Other Details
 
 ### PDN Modeling
-<center>
-| :-------------------------:|:-------------------------: |
-|<img src="fig/PDN.png" width="50%"> |<img src="fig/ETL.png" width="50%"> |
-<\center>
+
+<div style="display: flex; align-items: center; justify-content: space-around;">
+    <img src="fig/PDN.png" width="49%" />
+    <img src=img src="fig/ETL.png" width="49%" />
+</div>
+|<img src="fig/PDN.png" width="49%"> |<img src="fig/ETL.png" width="49%"> |
