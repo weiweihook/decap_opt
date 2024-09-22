@@ -2,11 +2,11 @@
 
 ## Prerequisites
 We model the 2.5D hierarchical PDN  by using 'bin' directory, there are three main files that we will use, as follows:
- - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration file (e.g.  config/case/chiplet1.conf), the usage is as follows:
+ - **diegen**: generates the on-chip PDN and subckts based on the chip PDN configuration file (e.g.  'config/case/chiplet1.conf'), the usage is as follows:
 ```shell 
 $ bin/diegen chiplet1.conf
 ```
- - **intgen**: generates the overall PDN and simulation file (.sp file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration file (e.g.  config/case/intp_chip1.conf), the usage is as follows:
+ - **intgen**: generates the overall PDN and simulation file ('.sp' file) for the 2.5D architecture, incorporating both the on-chip and interposer PDNs, according to the PDN configuration file (e.g. 'config/case/intp_chip1.conf'), the usage is as follows:
 ```shell 
 $ bin/intgen intp_chip1.conf
 ```
@@ -29,7 +29,7 @@ $ ngspice -b interposer_tr.sp -r vdi.raw # for VVI calculation
 
 ## Configurations
 
-We place five examples under 'conifg' directory, which contains the configuration files (.conf), subckt files (.subckt), and simulation file (.sp). 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case.  Below is a brief description of the key options used in this configuration file:
+We provide five examples (ROCKET-64(case1), Case1(case2), Case2(case3), Case3(case4), Case5(case4)) under the 'conifg' directory, each containing configuration files ('.conf'), netlist files ('.subckt'), and simulation file ('.sp'). Notably, to accelerate simulations in both the frequency and time domains, all netlists are configured without VSS (ground) connections, simplifying the analysis and reducing simulation complexity. 'caseX.conf' configuration file defines the settings for the 2.5D decap optimization case.  Below is a brief description of the key options used in this configuration file:
 - **intp_mim**: specifies the number of available unit decap cells (UDCs) on the on-interposer PDN
 - **chip_mos**: specifies the number of available UDCs on the on-chip PDNs
 - **NCAP**: specifies the total number of available UDCs, including both the on-interposer and on-chip decaps
@@ -43,16 +43,16 @@ We place five examples under 'conifg' directory, which contains the configuratio
 | Hyperparameter | Value |
 | :-------------------------:|:-------------------------: |
 | Activation Function | Linear rectification function|
-| Optimizer           | Adam |
-| Learning Rate       | 2.5E-4 |
-| Clip Gradient Norm  | 0.5 |
-| Total Epoch         | 600 |
-| Batch Size          | 50 |
-| Minibatch Size      | 4   |
-| Clipping Coefficient| 0.1 |
-| Entropy Coefficient | 0.01|
-| Value Coefficient   | 0.5 |
-| Discount       | 0.99|
+| Optimizer          		| Adam |
+| Learning Rate       	| 2.5E-4 |
+| Clip Gradient Norm  	| 0.5 |
+| Total Epoch         	| 600 (can be modified) |
+| Batch Size          		| 50 |
+| Minibatch Size      	| 4   |
+| Clipping Coefficient	| 0.1 |
+| Entropy Coefficient	| 0.01|
+| Value Coefficient   	| 0.5 |
+| Discount       		| 0.99|
 
 </center>
 
@@ -66,7 +66,7 @@ We place five examples under 'conifg' directory, which contains the configuratio
 ## Source Code
 
 ### Impedance Optimzation
-'src/impedance' directory contains the codes for impedance optimization. The state information contains: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution.
+The 'src/impedance' directory contains the codes for impedance optimization. The state information contains: Interposer Space, Chiplet Space, MIM Distribution, and MOS Distribution.
 
 ### Generate I/O Currents
 
