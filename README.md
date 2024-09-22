@@ -82,4 +82,4 @@ We place five examples under 'conifg' directory, which contains the configuratio
 
 ### PDN Modeling
 
-<img src="fig/PDN.png" width="50%"> <img src="fig/ETL.png" width="50%"> 
+|<img src="fig/PDN.png" width="50%"> |<img src="fig/ETL.png" width="50%"> |
