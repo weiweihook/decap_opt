@@ -104,3 +104,9 @@ The 'src/impedance' directory contains the codes for impedance optimization. The
     <img src="fig/PDN.png" width="40%" />
     <img src="fig/ETL.png" width="49%" />
 </div>
+
+### VVI Distribution after Time-Domain Optimization
+
+	|	|	|	|
+	| ---	| ---	| ---	|
+	| ![](fig/vvi_dis/vvi_init.png) <br/>(a) Initial VVI | ![](fig/vvi_dis/vvi0.50.png) <br/>(b) $\gamma$=0.50 |  ![](fig/vvi_dis/vvi0.30.png) <br/>(b) $\gamma$=0.30|
