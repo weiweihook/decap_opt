@@ -43,9 +43,9 @@ We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: C
   
 | Parameter | Value |
 | :-------------------------:|:-------------------------: |
-| Vdd				| 0.9V|
+| Vdd				| 0.9 V|
 | $ripple$          		| 5% |
-| $f_{knee}$       		| 3.4GHz |
+| $f_{knee}$       		| 3.4 GHz |
 | Impedance(flat)      	| 35 mΩ |
 | $\alpha$  			| 0.5 |
 | $\beta$         		| 0.5 |

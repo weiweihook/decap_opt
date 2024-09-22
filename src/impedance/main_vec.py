@@ -173,7 +173,7 @@ if __name__ == '__main__':
                 f.write(str_dc)
                 f.close()
 
-            if update >= 600:
+            if update >= 300:
                 break
 
         end_time = time.time()
