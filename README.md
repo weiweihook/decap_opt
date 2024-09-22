@@ -81,4 +81,4 @@ We place five examples under 'conifg' directory, which contains the configuratio
 ## Other Details
 
 ### PDN Modeling
-![PDN.png](fig/PDN.png =200x100)
+![PDN.png](fig/PDN.png width="50%")
