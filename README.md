@@ -83,7 +83,6 @@ We place five examples under 'conifg' directory, which contains the configuratio
 ### PDN Modeling
 
 <div style="display: flex; align-items: center; justify-content: space-around;">
-    <img src="fig/PDN.png" width="49%" />
+    <img src="fig/PDN.png" width="40%" />
     <img src="fig/ETL.png" width="49%" />
 </div>
-|<img src="fig/PDN.png" width="49%"> |<img src="fig/ETL.png" width="49%"> |
