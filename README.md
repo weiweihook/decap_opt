@@ -46,7 +46,7 @@ We provide five examples (case1: ROCKET-64, case2: Case1, case3: Case2, case4: C
 | Vdd				| 0.9V|
 | $ripple$          		| 5% |
 | $f_{knee}$       		| 3.4GHz |
-| Impedance(flat)      	| 3.5m$\Omega$ |
+| Impedance(flat)      	| 35 mΩ |
 | $\alpha$  			| 0.5 |
 | $\beta$         		| 0.5 |
 | $\gamma$          		| 0, 0.02, 0.05, 0.10, 0.20, 0.50 |
