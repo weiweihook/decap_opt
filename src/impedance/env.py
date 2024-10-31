@@ -8,16 +8,21 @@ import IPython
 import os
 import math
 import config
+import subprocess
 
 NCOL, NROW = 11, 11
 execute_files = ['interposer_ac_novss1.sp', 'interposer_ac_novss2.sp', 'interposer_ac_novss3.sp', 'interposer_ac_novss4.sp']
 port_files = ['port1_impeval.txt', 'port2_impeval.txt', 'port3_impeval.txt', 'port4_impeval.txt']
+commands = []
+for i in range(len(execute_files)):
+    commands.append(['ngspice', execute_files[i]])
 
 def run_os(path):
     original_path = os.getcwd()
     os.chdir(path)
-    for file in execute_files:
-        os.system('ngspice ' + file + '> /dev/null 2> /dev/null')
+    p = [subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE) for cmd in commands]
+    for pp in p:
+        pp.wait()
     os.chdir(original_path)
 
 
