@@ -29,9 +29,9 @@ if __name__ == '__main__':
         args.minibatch_size = int(args.batch_size // args.num_minibatches)
         args.idx_list = [case]*args.num_envs
 
-        # GPU
-        # device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
-        device = 'cpu'
+        # GPU or CPU
+        device = torch.device("cuda" if torch.cuda.is_available() and args.cuda else "cpu")
+        # device = 'cpu'
 
         # logging
         logger = logging.getLogger()
@@ -55,7 +55,6 @@ if __name__ == '__main__':
         # load env
         vec_env = DecapPlaceParallel(case)
         actor_critic = model.PPONetwork(vec_env).to(device)
-        # actor_critic.load_state_dict(torch.load('runs/case1/202409101544/vec_agent_params600.pth'))
         agent = PPO(actor_critic,
                     args.update_epochs,
                     args.batch_size,
@@ -77,13 +76,7 @@ if __name__ == '__main__':
                                   vec_env.action_space)
         rollouts.to(device)
 
-        num_updates = args.total_timesteps // args.batch_size
-        # num_updates = 600
-        loss = np.zeros(num_updates)
-        pg_loss = np.zeros(num_updates)
-        entropy_loss = np.zeros(num_updates)
-        v_loss = np.zeros(num_updates)
-        rewards = np.zeros((num_updates, args.num_steps * args.num_envs))
+        num_updates = 600
         BEST = [-50, 0, 0]  # reward, updates, steps
         BEST_Allocation = vec_env.cur_params_idx
 
@@ -148,11 +141,8 @@ if __name__ == '__main__':
                                                                  rollouts.values, rollouts.rewards, rollouts.dones)
             rollouts.advantages = adv
 
-            v_loss[update - 1], pg_loss[update - 1], entropy_loss[update - 1], loss[update - 1] = agent.update(rollouts,
-                                                                                                               args.num_steps,
-                                                                                                               vec_env.single_observation_space_shape,
-                                                                                                               vec_env.action_space_shape)
-            rewards[update - 1] = rollouts.rewards.cpu().numpy().reshape(-1)
+            v_loss, pg_loss, entropy_loss, loss = agent.update(rollouts,args.num_steps, vec_env.single_observation_space_shape,
+                                                                vec_env.action_space_shape)
 
             if update % 100 == 0:
                 torch.save(actor_critic.state_dict(), path + 'vec_agent_params' + str(update) + '.pth')
@@ -182,12 +172,6 @@ if __name__ == '__main__':
         # save network parameters
         torch.save(actor_critic, path + 'vec_agent.pth')
 
-        # save data
-        np.savetxt(path + 'reward.txt', rewards)
-        np.savetxt(path + 'loss.txt', loss)
-        np.savetxt(path + 'pgloss.txt', pg_loss)
-        np.savetxt(path + 'entloss.txt', entropy_loss)
-        np.savetxt(path + 'vloss.txt', v_loss)
 
 
 
